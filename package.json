@@ -1,0 +1,15 @@
+{
+  "name": "brvm-correction",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Système de monitoring automatisé BRVM avec alertes intelligentes",
+  "scripts": {
+    "dev:functions": "cd functions && npm run serve",
+    "dev:dashboard": "cd dashboard && npm run dev",
+    "build": "cd functions && npm run build && cd ../dashboard && npm run build",
+    "deploy": "firebase deploy",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:rules": "firebase deploy --only firestore:rules"
+  }
+}

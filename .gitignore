@@ -1,5 +1,9 @@
-Gemfile.lock
-
-.bundle/
-pkg/
-vendor/bundle/
+node_modules/
+.env
+.env.local
+.firebase/
+*.log
+dist/
+.next/
+out/
+functions/lib/
