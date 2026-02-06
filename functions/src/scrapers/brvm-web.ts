@@ -38,10 +38,12 @@ export async function scrapeBRVM(): Promise<MarketData> {
 
   let browser;
   try {
-    const puppeteer = await import('puppeteer');
+    const puppeteer = await import('puppeteer-core');
     browser = await puppeteer.default.launch({
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      // In Cloud Functions, use the bundled Chrome; locally, set CHROME_PATH env var
+      executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome-stable',
     });
 
     const page = await browser.newPage();
